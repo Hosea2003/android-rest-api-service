@@ -24,6 +24,7 @@ class MainActivity : ComponentActivity() {
                     LoginScreen(
                         modifier = Modifier
                             .padding(innerPadding)
+                            .fillMaxSize()
                     )
                 }
             }
