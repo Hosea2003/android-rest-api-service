@@ -23,7 +23,8 @@ class AuthViewModel: ViewModel() {
                     password = password
                 )
             )
-            print(response);
+            println("response")
+            println(response);
             _loading.postValue(false)
         }
     }
