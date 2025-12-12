@@ -11,11 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModelProvider
 import com.rindra.restservice.screen.LoginScreen
 import com.rindra.restservice.ui.theme.RestServiceTheme
+import com.rindra.restservice.viewmodel.AuthViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val authViewModel = ViewModelProvider(this)[AuthViewModel::class.java]
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
@@ -24,7 +27,8 @@ class MainActivity : ComponentActivity() {
                     LoginScreen(
                         modifier = Modifier
                             .padding(innerPadding)
-                            .fillMaxSize()
+                            .fillMaxSize(),
+                        authViewModel
                     )
                 }
             }
